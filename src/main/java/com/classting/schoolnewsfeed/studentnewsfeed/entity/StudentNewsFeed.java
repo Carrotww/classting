@@ -1,6 +1,6 @@
-package com.classting.schoolnewsfeed.subscription.entity;
+package com.classting.schoolnewsfeed.studentnewsfeed.entity;
 
-import com.classting.schoolnewsfeed.school.entity.School;
+import com.classting.schoolnewsfeed.News.entity.News;
 import com.classting.schoolnewsfeed.student.entity.Student;
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,8 +13,8 @@ import java.time.ZoneId;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "SUBSCRIPTION")
-public class Subscription {
+@Table(name = "STUDENTNEWSFEED")
+public class StudentNewsFeed {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +25,13 @@ public class Subscription {
     private Student student;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school_id")
-    private School school;
+    @JoinColumn(name = "news_id")
+    private News news;
 
-    private LocalDateTime subscribedDate;
+    private LocalDateTime addedToFeed;
 
     @PrePersist
     protected void onCreate() {
-        subscribedDate = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
+        addedToFeed = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
     }
 }
