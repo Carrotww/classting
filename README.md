@@ -1,14 +1,38 @@
 # classting
 classting assignment
 
-# 설정
+# 프로젝트 환경
 - java version 17
 - spring boot 3.1.11
+- Gradle
+
+# 설치 방법
+## 필수 조건
+- java 17 설치
+- git 설치
+
+## 설치
+1. 빈 파일 생성 후 프로젝트 클론
+```bash
+git clone https://github.com/Carrotww/classting.git
+cd classting
+```
+2. 프로젝트 빌드
+```bash
+./gradlew build
+```
+
+3. 프로젝트 실행
+```bash
+java -jar build/libs/school-news-feed-0.0.1-SNAPSHOT.jar
+```
 
 # API 문서
 ## Swagger 사용 url - API Sheet
 - 이 프로젝트의 API문서는 Swagger를 통해 제공됩니다. 프로젝트를 실행 후 아래 url로 접속해주세요.
 http://localhost:8080/swagger-ui/index.html
+
+
 
 # 데이터 모델 설계
 1. 학교
